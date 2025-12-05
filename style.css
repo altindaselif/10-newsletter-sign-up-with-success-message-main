@@ -1,0 +1,376 @@
+:root {
+  /* Colors */
+  --white: #fff;
+  --grey: #949494;
+  --blue-800: #242742;
+  --blue-700: #36384d;
+  --red: #ff6155;
+  --red-100: #ffe7e6;
+
+  --gradient-left: #ff6a3a;
+  --gradient-right: #ff527b;
+
+  /* Typography - Font Family */
+  --font-family: "Roboto", sans-serif;
+
+  /* Text Preset 1 */
+  --tp-1-size: 5.6rem;
+  --tp-1-weight: 700;
+  --tp-1-line-height: 1;
+
+  /* Text Preset 1 Mobile */
+  --tp-1m-size: 4rem;
+  --tp-1m-weight: 700;
+  --tp-1m-line-height: 1;
+
+  /* Text Preset 2 Bold */
+  --tp-2b-size: 1.6rem;
+  --tp-2b-weight: 700;
+  --tp-2b-line-height: 1.5;
+
+  /* Text Preset 2 Regular */
+  --tp-2r-size: 1.6rem;
+  --tp-2r-weight: 400;
+  --tp-2r-line-height: 1.5;
+
+  /* Text Preset 3 */
+  --tp-3-size: 1.2rem;
+  --tp-3-weight: 700;
+  --tp-3-line-height: 1.5;
+
+  /* Spacing */
+  --spacing-1300: 10.4rem;
+  --spacing-900: 7.2rem;
+  --spacing-800: 6.4rem;
+  --spacing-600: 4.8rem;
+  --spacing-500: 4rem;
+  --spacing-400: 3.2rem;
+  --spacing-300: 2.4rem;
+  --spacing-200: 1.6rem;
+  --spacing-100: 0.8rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--blue-700);
+  min-height: 100vh;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-container {
+  width: 100%;
+  max-width: 90.4rem;
+  background-color: var(--white);
+  border-radius: 3.6rem;
+  padding: 3.2rem;
+  gap: 6.4rem;
+
+  display: flex;
+}
+
+.img-container {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.newsletter-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.6rem;
+}
+
+.detail-container {
+  color: var(--blue-800);
+  width: 100%;
+  max-width: 37.6rem;
+  padding: 7rem 0;
+  font-size: var(--tp-2r-size);
+  font-weight: var(--tp-2r-weight);
+  line-height: var(--tp-2r-line-height);
+}
+
+.newsletter-title {
+  font-size: var(--tp-1-size);
+  font-weight: var(--tp-1-weight);
+  line-height: var(--tp-1-line-height);
+  margin-bottom: 3.2rem;
+}
+
+.newsletter-info {
+  margin-bottom: 3.2rem;
+}
+
+.newsletter-list {
+  list-style: none;
+  margin-bottom: 3.2rem;
+}
+
+.newsletter-list li {
+  position: relative;
+  padding-left: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 2.1rem;
+  height: 2.1rem;
+
+  background-image: url("images/icon-list.svg");
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-label {
+  font-size: var(--tp-3-size);
+  font-weight: var(--tp-3-weight);
+  line-height: var(--tp-3-line-height);
+  margin-bottom: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-input {
+  width: 100%;
+  background-color: var(--white);
+  border: 0.1rem solid var(--grey);
+  border-radius: 0.8rem;
+  padding: 1.6rem 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-input::placeholder {
+  color: var(--grey);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--blue-800);
+  color: var(--blue-800);
+}
+
+.open-modal,
+.close-modal {
+  font-size: var(--tp-2b-size);
+  font-weight: var(--tp-2b-weight);
+  line-height: var(--tp-2b-line-height);
+  width: 100%;
+  color: var(--white);
+  background-color: var(--blue-800);
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  padding: 1.6rem 2.4rem;
+}
+
+.open-modal:hover,
+.open-modal:active,
+.close-modal:hover,
+.close-modal:active {
+  background: linear-gradient(
+    to right,
+    var(--gradient-left),
+    var(--gradient-right)
+  );
+  box-shadow: 0 1.6rem 3.2rem 0 rgba(255, 97, 85, 0.5);
+}
+
+/* Modal Window */
+.modal {
+  color: var(--blue-800);
+  background-color: var(--white);
+  border-radius: 3.6rem;
+  width: 100%;
+  max-width: 50.4rem;
+  padding: 6.4rem;
+
+  flex-direction: column;
+  gap: 3.2rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.success-icon {
+  width: 100%;
+  max-width: 6.4rem;
+}
+
+.modal-title {
+  font-size: var(--tp-1-size);
+  font-weight: var(--tp-1-weight);
+  line-height: var(--tp-1-line-height);
+}
+
+.modal-info {
+  font-size: var(--tp-2r-size);
+  font-weight: var(--tp-2r-weight);
+  line-height: var(--tp-2r-line-height);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blue-700);
+  z-index: 5;
+}
+
+.modal,
+.overlay {
+  display: none;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Error Message */
+.form-input.error {
+  border-color: var(--red);
+  background-color: var(--red-100);
+  color: var(--red);
+}
+
+.form-input.error::placeholder {
+  color: var(--red);
+}
+
+.form-error {
+  display: none;
+  color: var(--red);
+}
+
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
+/* Tablet = 768px = 48em */
+/* Mobile = 384px = 24em */
+
+/******************************************/
+/* BELOW 768px (Tablet) */
+/******************************************/
+@media (max-width: 48em) {
+  body {
+    padding: 2.4rem;
+  }
+
+  .newsletter-container {
+    width: 100%;
+    max-width: 60.8rem;
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
+
+  .img-container {
+    width: 100%;
+    max-width: 52.8rem;
+  }
+
+  .newsletter-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .detail-container {
+    width: 100%;
+    max-width: 52.8rem;
+    padding: 0;
+  }
+
+  .newsletter-list {
+    margin-bottom: 2.4rem;
+  }
+}
+
+/******************************************/
+/* BELOW 384px (Mobile) */
+/******************************************/
+@media (max-width: 24em) {
+  body {
+    padding: 0;
+  }
+
+  .newsletter-container {
+    width: 100%;
+    max-width: 37.5rem;
+    border-radius: 0;
+    padding: 0rem;
+  }
+
+  .img-container {
+    width: 100%;
+    max-width: 37.5rem;
+  }
+
+  .newsletter-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .detail-container {
+    width: 100%;
+    max-width: 52.8rem;
+    padding: 0 2.4rem 4.4rem 2.4rem;
+  }
+
+  .newsletter-title,
+  .modal-title {
+    font-size: var(--tp-1m-size);
+    font-weight: var(--tp-1m-weight);
+    line-height: var(--tp-1m-line-height);
+  }
+
+  .newsletter-list {
+    margin-bottom: 4rem;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 37.5rem;
+    height: 100%;
+    border-radius: 0;
+    padding: 11.1rem 2.4rem 7rem 2.4rem;
+  }
+
+  .close-modal {
+    margin-top: auto;
+  }
+
+  .overlay {
+    display: none;
+  }
+}
