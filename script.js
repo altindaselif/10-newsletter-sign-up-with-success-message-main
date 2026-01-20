@@ -3,7 +3,7 @@ const formInput = document.getElementById("email");
 const formError = document.querySelector(".form-error");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".close-modal");
+const closeModalButton = document.querySelector(".close-modal");
 const modalEmail = document.querySelector(".modal-email");
 
 // Regex: Text + @ + Text + . + Text Rule
@@ -15,12 +15,12 @@ const isValidEmail = function (email) {
 
 const showError = function () {
   formInput.classList.add("error");
-  formError.style.display = "block";
+  formError.classList.add("active");
 };
 
 const clearError = function () {
   formInput.classList.remove("error");
-  formError.style.display = "none";
+  formError.classList.remove("active");
 };
 
 const openModal = function (e) {
@@ -33,10 +33,9 @@ const openModal = function (e) {
   } else {
     clearError();
     modalEmail.textContent = emailValue;
+
     modal.classList.add("active");
     overlay.classList.add("active");
-
-    modal.focus();
   }
 };
 
@@ -50,7 +49,7 @@ const closeModal = function () {
 };
 
 form.addEventListener("submit", openModal);
-btnCloseModal.addEventListener("click", closeModal);
+closeModalButton.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 
 formInput.addEventListener("input", function () {

@@ -275,6 +275,10 @@ body {
   color: var(--red);
 }
 
+.form-error.active {
+  display: block;
+}
+
 /* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
 /* Tablet = 768px = 48em */
 /* Mobile = 384px = 24em */
