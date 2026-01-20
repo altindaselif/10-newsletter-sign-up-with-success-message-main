@@ -36,6 +36,8 @@ const openModal = function (e) {
 
     modal.classList.add("active");
     overlay.classList.add("active");
+
+    modal.focus();
   }
 };
 
