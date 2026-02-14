@@ -10,8 +10,8 @@ This is a Newsletter Sign-Up Form with Success Message that you can use on your 
 
 ## Links
 
-- **GitHub Repository:** [View Code](https://github.com/altindaselif/newsletter-sign-up-with-success-message-main)
-- **Live Demo:** [View Live Site](https://altindaselif.github.io/newsletter-sign-up-with-success-message-main/)
+- **GitHub Repository:** [View Code](https://github.com/altindaselif/10-newsletter-sign-up-with-success-message-main)
+- **Live Demo:** [View Live Site](https://altindaselif.github.io/10-newsletter-sign-up-with-success-message-main/)
 
 ## Built With
 
